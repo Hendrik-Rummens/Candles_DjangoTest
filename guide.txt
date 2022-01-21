@@ -1,0 +1,12 @@
+--start virtualenv
+python -m venv .\venv
+.\venv\Scripts\activate
+
+--install django
+pip install django
+
+--list django commands
+django-admin
+
+--make django project
+
