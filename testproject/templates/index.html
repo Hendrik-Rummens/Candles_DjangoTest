@@ -1,5 +1,7 @@
 {% load static %}
 {% url 'candles/products/' as candles/products/ %}
+{% url 'register/' as register/ %}
+
 
 <!DOCTYPE html>
 
@@ -33,6 +35,7 @@
                         <li class="nav-item"><a class="nav-link" href="#about">Over ons</a></li>
                         <li class="nav-item"><a class="nav-link" href="#producten">Onze producten</a></li>
                         <li class="nav-item"><a class="nav-link" href="#signup">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ 'register/' }}">Registreer</a></li>
                         <!--<li class="nav-item"><a class="nav-link" href="{{ 'candles/products/' }}"> Onze producten</a></li>-->
                     </ul>
                 </div>
@@ -66,7 +69,7 @@
         </section>
         <!-- Producten -->
         <section  style="background-color: #eee;" id="producten">
-            <h4 class="text-center mb-5"><strong>Onze producten</strong></h4>
+            <h4 class="text-center mb-5 pt-5"><strong>Onze producten</strong></h4>
             <div class="grid container py-5">
                 
                 {% for candle in candles%}
@@ -79,8 +82,8 @@
                         <a href="KOPEN">
                             <div class="mask" style="background-color: rgba(0, 0, 0, 0.1);">
                             <div class="d-flex justify-content-start align-items-start h-100">
-                                <h5><span class="badge bg-light pt-2 ms-3 mt-3 text-dark">€{{candle.price}}</span></h5>
-                                <i class="fa fa-shopping-cart" style="margin-top:10px"></i>
+                                <h5><span class="badge bg-light pt-2 ms-3 mt-3 text-dark">+ €{{candle.price}}</span></h5>
+                                
                             </div>
                             </div>
                             <div class="hover-overlay">
@@ -244,7 +247,7 @@
                 <div class="row gx-4 gx-lg-5">
                     <div class="col-md-10 col-lg-8 mx-auto text-center">
                         <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-                        <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
+                        <h2 class="text-white mb-5">Abonneer om updates te ontvangen!</h2>
                         <!-- * * * * * * * * * * * * * * *-->
                         <!-- * * SB Forms Contact Form * *-->
                         <!-- * * * * * * * * * * * * * * *-->
@@ -255,8 +258,8 @@
                         <form class="form-signup" id="contactForm" data-sb-form-api-token="API_TOKEN">
                             <!-- Email address input-->
                             <div class="row input-group-newsletter">
-                                <div class="col"><input class="form-control" id="emailAddress" type="email" placeholder="Enter email address..." aria-label="Enter email address..." data-sb-validations="required,email" /></div>
-                                <div class="col-auto"><button class="btn btn-primary disabled" id="submitButton" type="submit">Notify Me!</button></div>
+                                <div class="col"><input class="form-control" id="emailAddress" type="email" placeholder="Voer hier je email adres in..." aria-label="Enter email address..." data-sb-validations="required,email" /></div>
+                                <div class="col-auto"><button class="btn btn-primary disabled" id="submitButton" type="submit">Houd me op de hoogte!</button></div>
                             </div>
                             <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:required">An email is required.</div>
                             <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:email">Email is not valid.</div>
@@ -290,7 +293,7 @@
                         <div class="card py-4 h-100">
                             <div class="card-body text-center">
                                 <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Address</h4>
+                                <h4 class="text-uppercase m-0">Adres</h4>
                                 <hr class="my-4 mx-auto" />
                                 <div class="small text-black-50">4923 Market Street, Orlando FL</div>
                             </div>
@@ -310,7 +313,7 @@
                         <div class="card py-4 h-100">
                             <div class="card-body text-center">
                                 <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Phone</h4>
+                                <h4 class="text-uppercase m-0">GSM</h4>
                                 <hr class="my-4 mx-auto" />
                                 <div class="small text-black-50">+1 (555) 902-8832</div>
                             </div>
