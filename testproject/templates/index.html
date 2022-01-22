@@ -36,8 +36,17 @@
                         <li class="nav-item"><a class="nav-link" href="#producten">Onze producten</a></li>
                         <li class="nav-item"><a class="nav-link" href="#signup">Contact</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ 'register/' }}">Registreer</a></li>
+
                         <!--<li class="nav-item"><a class="nav-link" href="{{ 'candles/products/' }}"> Onze producten</a></li>-->
-                    </ul>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item"><a class="nav-link" href="">Welkom, {{request.user}} </a></li>
+
+                        <li class="nav-item"><a class="nav-link" href="{% url 'logout'%}">Uitloggen</a></li>
+                        {% else %}
+                        <li class="nav-item"><a class="nav-link" href="{{ 'login/' }}">Inloggen</a></li>
+
+                        {% endif %}
+                      </ul>
                 </div>
             </div>
         </nav>
